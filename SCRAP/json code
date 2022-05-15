@@ -1,0 +1,63 @@
+@app.route('/send', methods = ['POST'])
+def send():
+
+
+    if request.method=='POST':
+
+        print(request.get_json())
+
+        jsondata = request.get_json()
+
+        print(jsondata['table_name'])
+
+        return jsonify(jsondata)
+
+classconfig.html
+
+<script type="text/javascript">
+  $(document).ready(function(){
+  $('#button1').click(function(){
+    alert($('#id_course').val()+','+$('#id_sem').val()+','+$('#id_faculty').val()
+        
+        +','+ $('#subject_theory').val() +','+$('#periods').val()); 
+
+    if($('#id_course').val() != null && $('#id_sem').val() != null &&
+         $('#periods').val().length != 0 && $('#subject_theory').val() != null 
+         
+         && $('#id_faculty').val().length != 0) 
+    {
+        theory_data={
+
+        table_name: $('#id_course').val()+"--"+$('#id_sem').val(),
+        faculty: $('#id_faculty').val(),
+        subject: $('#subject_theory').val(),
+        period: $('#periods').val(),
+
+        };
+
+        // alert(theory_data['table_name']);
+        // alert(theory_data['faculty']);
+        // alert(theory_data['subject']);
+        // alert(theory_data['period']);
+
+
+        $.ajax({
+        url: "/send",
+        type: "POST",
+        data:JSON.stringify(theory_data),
+        contentType: "application/json",
+        success: function(resp){
+            alert(resp);
+        },
+        });
+
+    }
+    else{
+
+        alert("no course selected ");
+    }   
+
+
+  });
+  });
+</script>

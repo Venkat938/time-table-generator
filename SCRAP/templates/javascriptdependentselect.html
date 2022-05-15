@@ -1,0 +1,38 @@
+<html>
+
+<head>
+	
+	<script>
+
+function func()
+{
+
+	alert('haii');
+	"<label>semister</label>"
+	var val=documnent.getElementById('course');
+
+	if(var in {{ data }})
+	{
+
+		documnent.write({{data}})
+	}
+
+
+	
+}
+</script>
+</head>
+
+<body>
+	<label>course:</label>
+	<select id='course' onclick=func()>
+	{% for i in data %}
+		<option> {{i}}</option>
+	{% endfor%}		
+	</select>
+
+
+
+
+</body>
+</html>

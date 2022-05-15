@@ -1,0 +1,20 @@
+class configuration:
+
+cse
+
+(first year )1-1->subject(theaory, labs)->class config webpage->teachers+subs(theory, labs)
+
+(second year)2-1
+
+(third year )3-1
+
+(final year-class)4-1
+
+
+end user
+
+labs-first floor-c,dwm
+
+labs-second floor-
+
+labs-third- floor-c,bda
